@@ -163,6 +163,11 @@ body {
   }
 }
 
+.whatsection p{
+    text-align: justify;
+    font-size: 16px;
+}
+
 .icon-box {
   width: 100px;
   height: 100px;
