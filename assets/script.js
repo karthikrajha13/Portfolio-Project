@@ -1,26 +1,69 @@
 const searchInput = document.getElementById("projectSearch");
+const searchBtn = document.getElementById("searchBtn");
+const searchMessage = document.getElementById("searchMessage");
 
-if (searchInput) {
-    searchInput.addEventListener("keyup", function () {
+searchBtn.addEventListener("click", function () {
 
-        const searchText = this.value.toLowerCase();
+    const searchText = searchInput.value.toLowerCase().trim();
 
-        const cards = document.querySelectorAll(".project-card");
+    let project = "";
 
-        cards.forEach(card => {
+    if (
+        searchText.includes("portfolio") ||
+        searchText.includes("personal") ||
+        searchText.includes("html") ||
+        searchText.includes("css")
+    ) {
 
-            const category = card.dataset.category.toLowerCase();
+        project = "portfolio";
 
-            if (category.includes(searchText)) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
+    }
 
+    else if (
+        searchText.includes("montessori") ||
+        searchText.includes("school") ||
+        searchText.includes("admission")
+    ) {
+
+        project = "montessori";
+
+    }
+
+    else if (
+        searchText.includes("textile") ||
+        searchText.includes("fabric") ||
+        searchText.includes("ecommerce") ||
+        searchText.includes("cloth")
+    ) {
+
+        project = "textile";
+
+    }
+
+    if (project !== "") {
+
+        searchMessage.textContent = "";
+        searchMessage.className = "";
+
+        const btn = document.querySelector(
+            `.project-btn[data-project="${project}"]`
+        );
+
+        btn.click();
+
+        document.getElementById("journey").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
         });
 
-    });
-}
+    } else {
+
+        searchMessage.textContent = "❌ Invalid Project!";
+        searchMessage.className = "text-danger text-center mt-3 fw-semibold";
+
+    }
+
+});
 
 const projects = {
 
