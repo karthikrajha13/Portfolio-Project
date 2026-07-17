@@ -1018,6 +1018,10 @@ a{
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
+#contact-form .row{
+    min-height: 75vh;
+}
+
 .contact-form-card {
   background: #f8fafc;
   padding: 35px;

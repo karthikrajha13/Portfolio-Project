@@ -291,51 +291,59 @@
 
                     <div class="col-lg-7" data-aos="fade-up">
 
-                        <form class="contact-form-card">
+                        <form id="contactForm" class="contact-form-card">
 
                             <div class="row g-3">
 
+                                <!-- Name -->
+                                <div class="col-12">
+                                    <input type="text" id="name" class="form-control custom-input"
+                                        placeholder="Your Name" required>
+                                </div>
+
+                                <!-- Email -->
                                 <div class="col-md-6">
-
-                                    <input type="text" class="form-control custom-input" placeholder="Your Name">
-
+                                    <input type="email" id="email" class="form-control custom-input"
+                                        placeholder="Your Email" required>
                                 </div>
 
+                                <!-- Mobile -->
                                 <div class="col-md-6">
-
-                                    <input type="email" class="form-control custom-input" placeholder="Your Email">
-
+                                    <input type="tel" id="phone" class="form-control custom-input"
+                                        placeholder="Mobile Number" pattern="[0-9]{10,15}" required>
                                 </div>
 
-                                <div class="col-12">
-
-                                    <input type="text" class="form-control custom-input" placeholder="Subject">
-
+                                <!-- Subject -->
+                                <div class="col-md-6">
+                                    <input type="text" id="subject" class="form-control custom-input"
+                                        placeholder="Subject" required>
                                 </div>
 
-                                <div class="col-12">
-
-                                    <textarea rows="6" class="form-control custom-input"
-                                        placeholder="Message"></textarea>
-
+                                <!-- Location -->
+                                <div class="col-md-6">
+                                    <input type="text" id="location" class="form-control custom-input"
+                                        placeholder="Location">
                                 </div>
 
+                                <!-- Message -->
                                 <div class="col-12">
+                                    <textarea id="message" rows="6" class="form-control custom-input"
+                                        placeholder="Your Message" required></textarea>
+                                </div>
 
-                                    <button class="btn btn-primary btn-lg">
+                                <!-- Button -->
+                                <div class="col-12">
+                                    <button type="submit" id="sendBtn" class="btn btn-primary btn-lg">
 
                                         <i class="bi bi-send me-2"></i>
-
                                         Send Message
 
                                     </button>
-
                                 </div>
 
                             </div>
 
                         </form>
-
                     </div>
 
                 </div>
@@ -546,7 +554,8 @@
             easing: "ease-out-cubic"
         });
     </script>
-
+    <script type="module" src="firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
