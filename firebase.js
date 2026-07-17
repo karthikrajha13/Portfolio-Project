@@ -7,6 +7,10 @@ import {
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
+const emailjs = window.emailjs;
+
+emailjs.init("zBw-hPuTp26TG8cZJ");
+
 const firebaseConfig = {
   apiKey: "AIzaSyCIuxnDNZQce1N6YUY2ZsNAcNq3_GD0cOY",
   authDomain: "portfolio-contact-4e3f0.firebaseapp.com",
@@ -53,6 +57,24 @@ form.addEventListener("submit", async (e) => {
 
       createdAt: serverTimestamp(),
     });
+
+    await emailjs.send(
+      "service_yzox587",
+
+      "template_zolq5ot",
+
+      {
+        name: document.getElementById("name").value,
+
+        email: document.getElementById("email").value,
+
+        phone: document.getElementById("phone").value,
+
+        subject: document.getElementById("subject").value,
+
+        message: document.getElementById("message").value,
+      },
+    );
 
     Swal.fire({
       icon: "success",
