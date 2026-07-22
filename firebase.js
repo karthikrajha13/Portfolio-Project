@@ -76,6 +76,22 @@ form.addEventListener("submit", async (e) => {
       },
     );
 
+console.log("Sending Auto Reply...");
+
+const autoReply = await emailjs.send(
+  "service_yzox587",
+  "template_35i5jbi",
+  {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    subject: document.getElementById("subject").value,
+    message: document.getElementById("message").value,
+    location: document.getElementById("location").value,
+  }
+);
+
+console.log("Auto Reply Success:", autoReply);
     Swal.fire({
       icon: "success",
 
